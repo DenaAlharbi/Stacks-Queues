@@ -1,8 +1,11 @@
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Reverser {
     public static void main(String[] args) {
         LabStack<String> s = new LabStack<>();
+        LabQueue<String> q = new LabQueue<>();
+
         Scanner k = new Scanner(System.in);
         System.out.print("Enter an input> ");
         String input = k.nextLine();
@@ -27,12 +30,15 @@ public class Reverser {
         if (!number.isEmpty()) {
             s.push(number);
         }
-        System.out.print("The stack After is> [");
 
         while (!s.isEmpty()) {
-            System.out.print(s.pop() + " ");
+            //System.out.print(s.pop() + " ");
+            q.enqueue(s.pop());
         }
-        System.out.println("]");
+        System.out.print("The stack After is> ");
+        System.out.print(q.toString());
+
+
 
     }
 }
